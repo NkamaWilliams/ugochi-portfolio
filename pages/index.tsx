@@ -4,6 +4,8 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const contactInfo = [['/images/phone.png', 'Phone Number', '+234 839 2388 1290'], ['/images/mail.png', 'Email', 'ugo@gmail.com'], ['/images/linkedin.png', 'Linkedin', 'https://ugo.lnkd.com']]
+
   const toggleMenu = () => {
     const dropdown = document.querySelector(".dropdown")
     const menu = document.querySelector(".menu")
@@ -20,7 +22,7 @@ export default function Home() {
   return (
     <main className="bg-white">
       <header className='min-h-screen min-w-full relative'>
-        <nav className='absolute z-10 top-4 w-full max-w-5xl lg:left-1/2 lg:-translate-x-1/2 flex justify-between items-center'>
+        <nav className='absolute z-10 p-2 bg-white sm:bg-transparent sm:top-4 w-full max-w-5xl lg:left-1/2 lg:-translate-x-1/2 flex justify-between items-center'>
           <a className='w-16 mx-4 pt-[0.4rem] box-border block border-4 border-light-blue rounded-full aspect-square text-center font-semibold text-4xl text-light-blue' href="#">N</a>
 
           <div className='h-max mx-4 flex flex-col sm:block sm:w-1/2 sm:box-border'>
@@ -38,17 +40,47 @@ export default function Home() {
         </nav>
 
         <div className='absolute top-0 w-full sm:w-1/2 min-h-full z-0 bg-dark-blue'>
-          <div className='absolute h-max z-10 top-1/2 -translate-y-1/2 w-screen text-center'>
+          <div className='absolute h-max z-10 top-1/2 -translate-y-1/2 w-full sm:w-[98vw] box-border text-center'>
             <div className='hidden md:block w-[500px] absolute z-0 -top-48 left-1/2 -translate-x-1/2 aspect-square'>
               <div className='w-full aspect-square rounded-full border-b-8 border-cyan animate-spin'></div>
             </div>
-            <h2 className='text-4xl font-semibold'>Hi! I am</h2>
-            <h1 className='text-6xl'><b className='text-white'>Nkama</b> Ugochi</h1>
+            <h2 className='text-4xl font-semibold w-full'>Hi! I am</h2>
+            <h1 className='text-6xl w-full'><b className='text-white'>Nkama</b> Ugochi</h1>
           </div>
         </div>
       </header>
 
-      <section></section>
+      <section className='flex flex-col sm:flex-row justify-around mt-10 text-light-blue'>
+        <div className='w-full sm:w-[48%] px-5'>
+          <h1 className='text-4xl font-semibold text-dark-blue'>About Me</h1>
+          <ul className='list-disc mx-5'>
+            <li className='text-xl py-3'>Lorem ipsum dolor sit amet, consecteur adipisci elit, sed eiusmod</li>
+            <li className='text-xl py-3'>Lorem ipsum dolor sit amet, consecteur adipisci elit, sed eiusmod</li>
+            <li className='text-xl py-3'>Lorem ipsum dolor sit amet, consecteur adipisci elit, sed eiusmod</li>
+            <li className='text-xl py-3'>Lorem ipsum dolor sit amet, consecteur adipisci elit, sed eiusmod</li>
+            <li className='text-xl py-3'>Lorem ipsum dolor sit amet, consecteur adipisci elit, sed eiusmod</li>
+            <li className='text-xl py-3'>Lorem ipsum dolor sit amet, consecteur adipisci elit, sed eiusmod</li>
+          </ul>
+        </div>
+
+        <div className='w-full sm:w-[48%] flex justify-center'>
+          <Image src='/images/girl.jpg' alt='ugo' width={450} height={400}/>
+        </div>
+      </section>
+
+      <section className='my-10 max-w-6xl mx-auto'>
+        <h2 className='text-4xl text-center font-semibold my-6'>Contact Me</h2>
+        
+        <div className='flex flex-wrap justify-around w-full'>
+          {contactInfo.map(info => <div key={info[1]} className='bg-dark-blue text-white w-72 h-96 mx-3 my-5'>
+            <div className='bg-white w-40 h-40 rounded-full my-8 mx-auto flex justify-center items-center'>
+              <Image alt='contact-method' src={info[0]} height={90} width={90}/>
+            </div>
+            <h1 className='font-semibold text-3xl text-center'>{info[1]}</h1>
+            <p className='text-center text-xl'>{info[2]}</p>
+          </div>)}
+        </div>
+      </section>
     </main>
     // <main
     //   className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
