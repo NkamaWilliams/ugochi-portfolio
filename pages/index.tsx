@@ -50,22 +50,29 @@ export default function Home() {
         </div>
       </header>
 
-      <section className='flex flex-col sm:flex-row justify-around mt-10 text-light-blue'>
-        <div className='w-full sm:w-[48%] px-5'>
-          <h1 className='text-4xl font-semibold text-dark-blue'>About Me</h1>
-          <ul className='list-disc mx-5'>
-            <li className='text-xl py-3'>Lorem ipsum dolor sit amet, consecteur adipisci elit, sed eiusmod</li>
-            <li className='text-xl py-3'>Lorem ipsum dolor sit amet, consecteur adipisci elit, sed eiusmod</li>
-            <li className='text-xl py-3'>Lorem ipsum dolor sit amet, consecteur adipisci elit, sed eiusmod</li>
-            <li className='text-xl py-3'>Lorem ipsum dolor sit amet, consecteur adipisci elit, sed eiusmod</li>
-            <li className='text-xl py-3'>Lorem ipsum dolor sit amet, consecteur adipisci elit, sed eiusmod</li>
-            <li className='text-xl py-3'>Lorem ipsum dolor sit amet, consecteur adipisci elit, sed eiusmod</li>
-          </ul>
+      <section className='flex flex-col sm:flex-row justify-around mt-10 text-light-blue sm:p-10'>
+        <div className='w-full sm:w-[48%] px-5 flex items-center'>
+          <div>
+            <h1 className='text-4xl font-semibold text-dark-blue'>About Me</h1>
+            <ul className='list-disc mx-5'>
+              <li className='text-xl py-3'>Lorem ipsum dolor sit amet, consecteur adipisci elit, sed eiusmod</li>
+              <li className='text-xl py-3'>Lorem ipsum dolor sit amet, consecteur adipisci elit, sed eiusmod</li>
+              <li className='text-xl py-3'>Lorem ipsum dolor sit amet, consecteur adipisci elit, sed eiusmod</li>
+              <li className='text-xl py-3'>Lorem ipsum dolor sit amet, consecteur adipisci elit, sed eiusmod</li>
+              <li className='text-xl py-3'>Lorem ipsum dolor sit amet, consecteur adipisci elit, sed eiusmod</li>
+              <li className='text-xl py-3'>Lorem ipsum dolor sit amet, consecteur adipisci elit, sed eiusmod</li>
+            </ul>
+          </div>
         </div>
 
-        <div className='w-full sm:w-[48%] flex justify-center'>
-          <Image src='/images/girl.jpg' alt='ugo' width={450} height={400}/>
+        <div className='w-full sm:w-[48%] sm:aspect-square flex justify-center'>
+          {/* <Image src='/@/public/images/girl.jpg' alt='ugo' width={450} height={400}/> */}
+          <img className='object-cover w-full object-top' alt='ugo' src='/images/girl.jpg'/>
         </div>
+      </section>
+
+      <section>
+        
       </section>
 
       <section className='my-10 max-w-6xl mx-auto'>
