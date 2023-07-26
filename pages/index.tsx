@@ -6,6 +6,8 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   const contactInfo = [['/images/phone.png', 'Phone Number', '+234 839 2388 1290'], ['/images/mail.png', 'Email', 'ugo@gmail.com'], ['/images/linkedin.png', 'Linkedin', 'https://ugo.lnkd.com']]
 
+  const gallery = ["lamb.jpg", "widom.jpg", "pegasus.jpg"]
+
   const toggleMenu = () => {
     const dropdown = document.querySelector(".dropdown")
     const menu = document.querySelector(".menu")
@@ -17,6 +19,10 @@ export default function Home() {
     else{
       menu?.setAttribute("src", "/images/icon-close.svg")
     }
+  }
+
+  const changeImage = (amnt:number) => {
+    let gallery = document.querySelector(".gallery")
   }
 
   return (
@@ -65,14 +71,23 @@ export default function Home() {
           </div>
         </div>
 
-        <div className='w-full sm:w-[48%] sm:aspect-square flex justify-center'>
+        <div className='w-full sm:w-[48%] sm:max-w-lg sm:aspect-square flex justify-center'>
           {/* <Image src='/@/public/images/girl.jpg' alt='ugo' width={450} height={400}/> */}
           <img className='object-cover w-full object-top' alt='ugo' src='/images/girl.jpg'/>
         </div>
       </section>
 
-      <section>
-        
+      <section className='my-16'>
+      <h1 className='m-4 text-4xl font-semibold text-dark-blue text-center'>Gallery</h1>
+        <div className='flex items-center justify-center relative sm:max-w-4xl sm:m-auto'>
+          <div className='w-96 aspect-square'>
+            <img className='w-full object-cover gallery' alt='picture' src='/images/lamb.jpg'/>
+          </div>
+
+          <p className='aspect-square opacity-30 hover:opacity-70 hover:cursor-pointer w-24 font-bold text-7xl bg-dark-blue text-white rounded-full pb-4 flex items-center justify-center absolute left-0'>&larr;</p>
+
+          <p className='aspect-square opacity-30 hover:opacity-70 hover:cursor-pointer w-24 font-bold text-7xl bg-dark-blue text-white rounded-full pb-4 flex items-center justify-center absolute right-0'>&rarr;</p>
+        </div>
       </section>
 
       <section className='my-10 max-w-6xl mx-auto'>
