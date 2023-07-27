@@ -1,12 +1,15 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
+import { useState } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const [state, setState] = useState(0)
+
   const contactInfo = [['/images/phone.png', 'Phone Number', '+234 839 2388 1290'], ['/images/mail.png', 'Email', 'ugo@gmail.com'], ['/images/linkedin.png', 'Linkedin', 'https://ugo.lnkd.com']]
 
-  const gallery = ["lamb.jpg", "widom.jpg", "pegasus.jpg"]
+  const galleryImages = ["lamb.jpg", "wisdom.jpg", "pegasus.jpg"]
 
   const toggleMenu = () => {
     const dropdown = document.querySelector(".dropdown")
@@ -23,12 +26,15 @@ export default function Home() {
 
   const changeImage = (amnt:number) => {
     let gallery = document.querySelector(".gallery")
+    setState((state + amnt) >= 0? (state + amnt) % galleryImages.length : 2)
+    console.log(state)
+    gallery?.setAttribute('src', '/images/'+galleryImages[state])
   }
 
   return (
     <main className="bg-white">
-      <header className='min-h-screen min-w-full relative'>
-        <nav className='absolute z-10 p-2 bg-white sm:bg-transparent sm:top-4 w-full max-w-5xl lg:left-1/2 lg:-translate-x-1/2 flex justify-between items-center'>
+
+      <nav className='sticky top-0 z-10 p-2 bg-white sm:relative sm:bg-transparent sm:top-4 w-full max-w-5xl lg:left-1/2 lg:-translate-x-1/2 flex justify-between items-center'>
           <a className='w-16 mx-4 pt-[0.4rem] box-border block border-4 border-light-blue rounded-full aspect-square text-center font-semibold text-4xl text-light-blue' href="#">N</a>
 
           <div className='h-max mx-4 flex flex-col sm:block sm:w-1/2 sm:box-border'>
@@ -36,15 +42,18 @@ export default function Home() {
               <Image src='/images/icon-hamburger.svg' alt='menu-toggle' width={34} height={64} className='menu'/>
             </div>
             
-            <div className='hidden dropdown absolute max-w-[375px] my-4 top-full left-1/2 -translate-x-1/2 w-[90%] bg-white shadow-xl sm:relative sm:flex sm:justify-end sm:max-w-3xl sm:left-0 sm:top-0 sm:-translate-x-0 sm:w-full sm:shadow-none sm:bg-transparent'>
-              <a href='#' className='block px-8 py-4 font-semibold text-lg text-dark-blue hover:text-cyan hover:bg-dark-blue sm:inline sm:p-0 sm:mx-2 sm:text-light-blue'>Home</a>
-              <a href='#' className='block px-8 py-4 font-semibold text-lg text-dark-blue hover:text-cyan hover:bg-dark-blue sm:inline sm:p-0 sm:mx-2 sm:text-light-blue'>About Me</a>
-              <a href='#' className='block px-8 py-4 font-semibold text-lg text-dark-blue hover:text-cyan hover:bg-dark-blue sm:inline sm:p-0 sm:mx-2 sm:text-light-blue'>Gallery</a>
-              <a href='#' className='block px-8 py-4 font-semibold text-lg text-dark-blue hover:text-cyan hover:bg-dark-blue sm:inline sm:p-0 sm:mx-2 sm:text-light-blue'>Contact</a>
+            <div onClick={toggleMenu} className='hidden dropdown absolute w-full h-screen sm:h-full p-5 bg-transparent-black top-full left-1/2 -translate-x-1/2 shadow-xl sm:relative sm:flex sm:justify-end sm:max-w-3xl sm:left-0 sm:top-0 sm:-translate-x-0 sm:w-full sm:shadow-none sm:bg-transparent'>
+              <div className='bg-white max-w-[375px] w-[90%] m-auto sm:flex sm:bg-transparent'>
+                <a href='#' className='block px-8 py-4 font-semibold text-lg text-dark-blue hover:text-cyan hover:bg-dark-blue sm:inline sm:p-0 sm:mx-2 sm:text-black sm:hover:bg-transparent'>Home</a>
+                <a href='#about' className='block px-8 py-4 font-semibold text-lg text-dark-blue hover:text-cyan hover:bg-dark-blue sm:inline sm:p-0 sm:mx-2 sm:text-black sm:hover:bg-transparent'>About Me</a>
+                <a href='#gallery' className='block px-8 py-4 font-semibold text-lg text-dark-blue hover:text-cyan hover:bg-dark-blue sm:inline sm:p-0 sm:mx-2 sm:text-black sm:hover:bg-transparent'>Gallery</a>
+                <a href='#contact' className='block px-8 py-4 font-semibold text-lg text-dark-blue hover:text-cyan hover:bg-dark-blue sm:inline sm:p-0 sm:mx-2 sm:text-black sm:hover:bg-transparent'>Contact</a>
+              </div>
             </div>
           </div>
-        </nav>
+      </nav>
 
+      <header className='min-h-screen min-w-full relative sm:bottom-32 lg:bottom-[85px]'>
         <div className='absolute top-0 w-full sm:w-1/2 min-h-full z-0 bg-dark-blue'>
           <div className='absolute h-max z-10 top-1/2 -translate-y-1/2 w-full sm:w-[98vw] box-border text-center'>
             <div className='hidden md:block w-[500px] absolute z-0 -top-48 left-1/2 -translate-x-1/2 aspect-square'>
@@ -56,7 +65,7 @@ export default function Home() {
         </div>
       </header>
 
-      <section className='flex flex-col sm:flex-row justify-around mt-10 text-light-blue sm:p-10'>
+      <section id='about' className='flex flex-col sm:flex-row justify-around mt-10 text-light-blue sm:p-10'>
         <div className='w-full sm:w-[48%] px-5 flex items-center'>
           <div>
             <h1 className='text-4xl font-semibold text-dark-blue'>About Me</h1>
@@ -77,20 +86,20 @@ export default function Home() {
         </div>
       </section>
 
-      <section className='my-16'>
+      <section id='gallery' className='my-16'>
       <h1 className='m-4 text-4xl font-semibold text-dark-blue text-center'>Gallery</h1>
         <div className='flex items-center justify-center relative sm:max-w-4xl sm:m-auto'>
           <div className='w-96 aspect-square'>
             <img className='w-full object-cover gallery' alt='picture' src='/images/lamb.jpg'/>
           </div>
 
-          <p className='aspect-square opacity-30 hover:opacity-70 hover:cursor-pointer w-24 font-bold text-7xl bg-dark-blue text-white rounded-full pb-4 flex items-center justify-center absolute left-0'>&larr;</p>
+          <p onClick={() => changeImage(-1)} className='aspect-square opacity-30 hover:opacity-70 hover:cursor-pointer w-24 font-bold text-7xl bg-dark-blue text-white rounded-full pb-4 flex items-center justify-center absolute left-0'>&larr;</p>
 
-          <p className='aspect-square opacity-30 hover:opacity-70 hover:cursor-pointer w-24 font-bold text-7xl bg-dark-blue text-white rounded-full pb-4 flex items-center justify-center absolute right-0'>&rarr;</p>
+          <p onClick={() => changeImage(1)} className='aspect-square opacity-30 hover:opacity-70 hover:cursor-pointer w-24 font-bold text-7xl bg-dark-blue text-white rounded-full pb-4 flex items-center justify-center absolute right-0'>&rarr;</p>
         </div>
       </section>
 
-      <section className='my-10 max-w-6xl mx-auto'>
+      <section id='contact' className='my-10 max-w-6xl mx-auto'>
         <h2 className='text-4xl text-center font-semibold my-6'>Contact Me</h2>
         
         <div className='flex flex-wrap justify-around w-full'>
