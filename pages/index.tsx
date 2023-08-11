@@ -7,9 +7,9 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   const [state, setState] = useState(0)
 
-  const contactInfo = [['/images/phone.png', 'Phone Number', '+234 818 6440 0990'], ['/images/mail.png', 'Email', 'moyinoluwa.nkama@gmail.com'], ['/images/linkedin.png', 'Linkedin', 'https://www.linkedin.com/in/ugochi-nkama-aat-aca']]
+  const contactInfo = [['/images/phone.png', 'Phone Number', '+234 818 644 0990'], ['/images/mail.png', 'Email', 'moyinoluwa.nkama@gmail.com'], ['/images/linkedin.png', 'Linkedin', 'https://www.linkedin.com/in/ugochi-nkama-aat-aca']]
 
-  const galleryImages = ["img-1.jpg", "img-2.jpg", "img-3.jpg", "img-4.jpg"]
+  const galleryImages = ["img-1.jpg", "img-3.jpg", "img-2.jpg", "img-4.jpg"]
 
   const toggleMenu = () => {
     const dropdown = document.querySelector(".dropdown")
@@ -81,14 +81,9 @@ export default function Home() {
         <div className='w-full sm:w-[48%] px-5 flex items-center'>
           <div>
             <h1 className='text-4xl font-semibold text-dark-blue'>About Me</h1>
-            <ul className='list-disc mx-5'>
-              <li className='text-xl py-3'>Lorem ipsum dolor sit amet, consecteur adipisci elit, sed eiusmod</li>
-              <li className='text-xl py-3'>Lorem ipsum dolor sit amet, consecteur adipisci elit, sed eiusmod</li>
-              <li className='text-xl py-3'>Lorem ipsum dolor sit amet, consecteur adipisci elit, sed eiusmod</li>
-              <li className='text-xl py-3'>Lorem ipsum dolor sit amet, consecteur adipisci elit, sed eiusmod</li>
-              <li className='text-xl py-3'>Lorem ipsum dolor sit amet, consecteur adipisci elit, sed eiusmod</li>
-              <li className='text-xl py-3'>Lorem ipsum dolor sit amet, consecteur adipisci elit, sed eiusmod</li>
-            </ul>
+            <p className='text-xl leading-loose mt-8'>I am Nkama Ugochi, an ICAN certified accountant and Audit Associate at BDO. I aspire to become a leading professional in my field in the next 5 years, and I am currently working hard to reach that goal.</p>
+
+            <p className='text-xl leading-loose mt-8'>When I am not working, reading, or learning new things, I like to make cards for various occasions, like birthdays, the New Year, or to wish someone well, all as a way to challenge my creativity. You can check out some of my work below:</p>
           </div>
         </div>
 
@@ -105,23 +100,25 @@ export default function Home() {
             <img className='w-full object-contain gallery' alt='picture' src='/images/img-1.jpg'/>
           </div>
 
-          <p onClick={() => changeImage(-1)} className='aspect-square opacity-30 hover:opacity-70 hover:cursor-pointer w-24 font-bold text-7xl bg-dark-blue text-white rounded-full pb-4 flex items-center justify-center absolute left-0'>&larr;</p>
+          <p onClick={() => changeImage(-1)} className='aspect-square opacity-30 hover:opacity-70 hover:cursor-pointer w-24 font-bold text-7xl bg-indigo-700 text-white rounded-full pb-4 flex items-center justify-center absolute left-0'>&larr;</p>
 
-          <p onClick={() => changeImage(1)} className='aspect-square opacity-30 hover:opacity-70 hover:cursor-pointer w-24 font-bold text-7xl bg-dark-blue text-white rounded-full pb-4 flex items-center justify-center absolute right-0'>&rarr;</p>
+          <p onClick={() => changeImage(1)} className='aspect-square opacity-30 hover:opacity-70 hover:cursor-pointer w-24 font-bold text-7xl bg-indigo-700 text-white rounded-full pb-4 flex items-center justify-center absolute right-0'>&rarr;</p>
         </div>
       </section>
 
       <section id='contact' className='my-10 max-w-6xl mx-auto'>
         <h2 className='text-4xl text-center font-semibold my-6'>Contact Me</h2>
         
-        <div className='flex flex-wrap justify-around w-full'>
-          {contactInfo.map(info => <div key={info[1]} className='bg-dark-blue text-white w-72 h-96 mx-3 my-5'>
-            <div className='bg-white w-40 h-40 rounded-full my-8 mx-auto flex justify-center items-center'>
-              <Image alt='contact-method' src={info[0]} height={90} width={90}/>
+        <div className='flex flex-wrap h-[400px] items-center justify-around w-full'>
+          {contactInfo.map(info => <div key={info[1]} className='w-80 aspect-[0.75]'>
+            <div className='text-white w-11/12 aspect-[0.75] pt-3 mx-3 my-5 shadow-lg shadow-gray-500 bg-slate-800 hover:bg-slate-700'>
+              <div className='bg-white w-40 h-40 rounded-full my-8 mx-auto flex justify-center items-center'>
+                <Image alt='contact-method' src={info[0]} height={90} width={90}/>
+              </div>
+              <h1 className='font-semibold text-3xl text-center'>{info[1]}</h1>
+              <p className='text-center text-xl m-auto w-10/12'>{contact(info)}</p>
+              
             </div>
-            <h1 className='font-semibold text-3xl text-center'>{info[1]}</h1>
-            <p className='text-center text-xl m-auto w-10/12'>{contact(info)}</p>
-            
           </div>)}
         </div>
       </section>
