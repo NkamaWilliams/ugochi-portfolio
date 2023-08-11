@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   const [state, setState] = useState(0)
 
-  const contactInfo = [['/images/phone.png', 'Phone Number', '+234 839 2388 1290'], ['/images/mail.png', 'Email', 'moyinoluwa.nkama@gmail.com'], ['/images/linkedin.png', 'Linkedin', 'https://www.linkedin.com/in/ugochi-nkama-aat-aca']]
+  const contactInfo = [['/images/phone.png', 'Phone Number', '+234 818 6440 0990'], ['/images/mail.png', 'Email', 'moyinoluwa.nkama@gmail.com'], ['/images/linkedin.png', 'Linkedin', 'https://www.linkedin.com/in/ugochi-nkama-aat-aca']]
 
   const galleryImages = ["img-1.jpg", "img-2.jpg", "img-3.jpg", "img-4.jpg"]
 
@@ -102,7 +102,7 @@ export default function Home() {
         <h1 className='m-4 text-4xl font-semibold text-dark-blue text-center'>Gallery</h1>
         <div className='flex items-center justify-center relative sm:max-w-4xl sm:m-auto'>
           <div className='w-96 aspect-square'>
-            <img className='w-full object-contain gallery' alt='picture' src='/images/lamb.jpg'/>
+            <img className='w-full object-contain gallery' alt='picture' src='/images/img-1.jpg'/>
           </div>
 
           <p onClick={() => changeImage(-1)} className='aspect-square opacity-30 hover:opacity-70 hover:cursor-pointer w-24 font-bold text-7xl bg-dark-blue text-white rounded-full pb-4 flex items-center justify-center absolute left-0'>&larr;</p>
