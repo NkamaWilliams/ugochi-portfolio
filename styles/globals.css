@@ -34,3 +34,7 @@ main > section{
 #about{
   border: none;
 }
+
+.border-image{
+  border-image: url("/images/rainbowish.jpg") 50 round;
+}

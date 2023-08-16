@@ -9,7 +9,7 @@ export default function Home() {
 
   const contactInfo = [['/images/phone.png', 'Phone Number', '+234 818 644 0990'], ['/images/mail.png', 'Email', 'moyinoluwa.nkama@gmail.com'], ['/images/linkedin.png', 'Linkedin', 'https://www.linkedin.com/in/ugochi-nkama-aat-aca']]
 
-  const galleryImages = ["img-1.jpg", "img-3.jpg", "img-2.jpg", "img-4.jpg"]
+  const galleryImages = ["img-1.jpg", "img-3.jpg", "img-2.jpg", "img-4.jpg", "img-5(1).jpg"]
 
   const toggleMenu = () => {
     const dropdown = document.querySelector(".dropdown")
@@ -93,16 +93,19 @@ export default function Home() {
         </div>
       </section>
 
-      <section id='gallery' className='my-16 max-w-6xl mx-auto'>
-        <h1 className='m-4 text-4xl font-semibold text-dark-blue text-center'>Gallery</h1>
-        <div className='flex items-center justify-center relative sm:max-w-4xl sm:m-auto'>
-          <div className='w-96 aspect-square'>
-            <img className='w-full object-contain gallery' alt='picture' src='/images/img-1.jpg'/>
+      <section id='gallery' className='my-16 mx-2'>
+        <h1 className='m-4 text-4xl font-semibold text-black text-center'>Featured Works!</h1>
+
+        <div className=' max-w-6xl flex-grow mx-auto border-[20px] border-image'>
+          <div className='flex items-center justify-center relative sm:max-w-4xl sm:m-auto overflow-hidden py-10 min-h-[500px]'>
+            <div className='w-96 aspect-square object-contain'>
+              <img className='w-full gallery' alt='picture' src='/images/img-1.jpg'/>
+            </div>
+
+            <p onClick={() => changeImage(-1)} className='aspect-square opacity-70 hover:opacity-100 hover:cursor-pointer w-24 font-bold text-7xl text-dark-blue rounded-full pb-4 flex items-center justify-center absolute -left-6'>&lt;</p>
+
+            <p onClick={() => changeImage(1)} className='aspect-square opacity-70 hover:opacity-100 hover:cursor-pointer w-24 font-bold text-7xl text-dark-blue rounded-full pb-4 flex items-center justify-center absolute -right-6'>&gt;</p>
           </div>
-
-          <p onClick={() => changeImage(-1)} className='aspect-square opacity-30 hover:opacity-70 hover:cursor-pointer w-24 font-bold text-7xl bg-indigo-700 text-white rounded-full pb-4 flex items-center justify-center absolute left-0'>&larr;</p>
-
-          <p onClick={() => changeImage(1)} className='aspect-square opacity-30 hover:opacity-70 hover:cursor-pointer w-24 font-bold text-7xl bg-indigo-700 text-white rounded-full pb-4 flex items-center justify-center absolute right-0'>&rarr;</p>
         </div>
       </section>
 
