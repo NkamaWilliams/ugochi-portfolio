@@ -56,23 +56,23 @@ export default function Home() {
             
             <div onClick={toggleMenu} className='hidden dropdown absolute w-full h-screen sm:h-full p-5 bg-transparent-black top-full left-1/2 -translate-x-1/2 shadow-xl sm:relative sm:flex sm:justify-end sm:max-w-3xl sm:left-0 sm:top-0 sm:-translate-x-0 sm:w-full sm:shadow-none sm:bg-transparent'>
               <div className='bg-white max-w-[375px] w-[90%] m-auto sm:flex sm:bg-transparent'>
-                <a href='#' className='block px-8 py-4 font-semibold text-lg text-dark-blue hover:text-cyan hover:bg-dark-blue sm:inline sm:p-0 sm:mx-2 sm:text-black sm:hover:bg-transparent'>Home</a>
-                <a href='#about' className='block px-8 py-4 font-semibold text-lg text-dark-blue hover:text-cyan hover:bg-dark-blue sm:inline sm:p-0 sm:mx-2 sm:text-black sm:hover:bg-transparent'>About Me</a>
-                <a href='#gallery' className='block px-8 py-4 font-semibold text-lg text-dark-blue hover:text-cyan hover:bg-dark-blue sm:inline sm:p-0 sm:mx-2 sm:text-black sm:hover:bg-transparent'>Gallery</a>
-                <a href='#contact' className='block px-8 py-4 font-semibold text-lg text-dark-blue hover:text-cyan hover:bg-dark-blue sm:inline sm:p-0 sm:mx-2 sm:text-black sm:hover:bg-transparent'>Contact</a>
+                <a href='#' className='block px-8 py-4 font-semibold text-lg text-dark-blue hover:text-cyan hover:bg-dark-blue sm:inline sm:p-0 sm:mx-2 sm:text-light-blue sm:hover:bg-transparent'>Home</a>
+                <a href='#about' className='block px-8 py-4 font-semibold text-lg text-dark-blue hover:text-cyan hover:bg-dark-blue sm:inline sm:p-0 sm:mx-2 sm:text-light-blue sm:hover:bg-transparent'>About Me</a>
+                <a href='#gallery' className='block px-8 py-4 font-semibold text-lg text-dark-blue hover:text-cyan hover:bg-dark-blue sm:inline sm:p-0 sm:mx-2 sm:text-light-blue sm:hover:bg-transparent'>Gallery</a>
+                <a href='#contact' className='block px-8 py-4 font-semibold text-lg text-dark-blue hover:text-cyan hover:bg-dark-blue sm:inline sm:p-0 sm:mx-2 sm:text-light-blue sm:hover:bg-transparent'>Contact</a>
               </div>
             </div>
           </div>
       </nav>
 
-      <header className='min-h-screen min-w-full relative sm:bottom-32 lg:bottom-[85px]'>
-        <div className='absolute top-0 w-full sm:w-1/2 min-h-full z-0 bg-dark-blue'>
+      <header className='min-h-screen min-w-full relative sm:bottom-32 lg:bottom-[85px] bg-[url("/images/gradienta.jpg")] bg-cover'>
+        <div className='absolute top-0 w-full sm:w-1/2 min-h-full z-0'>
           <div className='absolute h-max z-10 top-1/2 -translate-y-1/2 w-full sm:w-[98vw] box-border text-center'>
             <div className='hidden md:block w-[500px] absolute z-0 -top-48 left-1/2 -translate-x-1/2 aspect-square'>
               <div className='w-full aspect-square rounded-full border-b-8 border-cyan animate-spin'></div>
             </div>
-            <h2 className='text-4xl font-semibold w-full'>Hi! I am</h2>
-            <h1 className='text-6xl w-full'><b className='text-white'>Nkama</b> Ugochi</h1>
+            <h2 className='text-4xl text-red-600 font-semibold w-full'>Hi! I am</h2>
+            <h1 className='text-6xl w-full text-light-blue'><b className='text-white'>Nkama</b> Ugochi</h1>
           </div>
         </div>
       </header>
