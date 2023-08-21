@@ -76,7 +76,7 @@ export default function Home() {
     <main className="bg-white">
 
       <nav className='sticky top-0 z-10 p-2 bg-white sm:relative sm:bg-transparent sm:top-4 w-full max-w-5xl lg:left-1/2 lg:-translate-x-1/2 flex justify-between items-center'>
-          <a className='w-16 mx-4 pt-[0.4rem] box-border block border-4 border-light-blue rounded-full aspect-square text-center font-semibold text-4xl text-light-blue' href="#">N</a>
+          <a className='w-16 mx-4 pt-[0.4rem] box-border block border-4 border-dark-blue rounded-full aspect-square text-center font-semibold text-4xl text-light-blue relative' href="#"><Image className='rounded-full' alt='warrior' src='/images/warrior.jpeg' fill objectFit='contain'/></a>
 
           <div className='h-max mx-4 flex flex-col sm:block sm:w-1/2 sm:box-border'>
             <div onClick={toggleMenu} className='ml-auto sm:hidden'>
@@ -122,17 +122,19 @@ export default function Home() {
       </section>
 
       <section id='gallery' className='my-16 mx-2'>
-        <h2 className='m-4 text-4xl font-semibold text-black text-center'>Featured Works!</h2>
+        <h2 className='mx-auto my-4 w-max text-4xl font-semibold bg-gradient-rainbow text-transparent bg-clip-text text-center'>Featured Works!</h2>
 
-        <div className=' max-w-6xl flex-grow mx-auto border-[20px] border-image'>
-          <div className='flex items-center justify-center relative sm:max-w-4xl sm:m-auto overflow-hidden py-10 min-h-[500px]'>
-            <div className='w-96 aspect-square relative'>
-              <Image alt='picture' src={galleryImages[state]} fill style={{objectFit:'contain'}} />
+        <div className=' max-w-6xl flex-grow mx-auto border-[20px] border-image bg-[#FFFDD0] bg-no-repeat bg-cover'>
+          <div className=''>
+            <div className='flex items-center justify-center relative sm:max-w-4xl sm:m-auto overflow-hidden py-10 min-h-[500px]'>
+              <div className='w-96 aspect-square relative'>
+                <Image alt='picture' src={galleryImages[state]} fill style={{objectFit:'contain'}} />
+              </div>
+
+              <p onClick={() => changeImage(-1)} className='aspect-square opacity-70 hover:opacity-100 hover:cursor-pointer w-24 font-bold text-7xl text-dark-blue rounded-full pb-4 flex items-center justify-center absolute -left-6'>&lt;</p>
+
+              <p onClick={() => changeImage(1)} className='aspect-square opacity-70 hover:opacity-100 hover:cursor-pointer w-24 font-bold text-7xl text-dark-blue rounded-full pb-4 flex items-center justify-center absolute -right-6'>&gt;</p>
             </div>
-
-            <p onClick={() => changeImage(-1)} className='aspect-square opacity-70 hover:opacity-100 hover:cursor-pointer w-24 font-bold text-7xl text-dark-blue rounded-full pb-4 flex items-center justify-center absolute -left-6'>&lt;</p>
-
-            <p onClick={() => changeImage(1)} className='aspect-square opacity-70 hover:opacity-100 hover:cursor-pointer w-24 font-bold text-7xl text-dark-blue rounded-full pb-4 flex items-center justify-center absolute -right-6'>&gt;</p>
           </div>
         </div>
       </section>
@@ -140,16 +142,16 @@ export default function Home() {
       <section id='certificates' className='my-10'>
         <h1 className='m-4 text-4xl font-semibold text-black text-center'>My Certificates</h1>
 
-        <div className='max-w-7xl m-auto flex justify-center flex-wrap'>
-          {certs.map(cert => <div key={cert.title.split(" ")[0]} className='bg-white w-11/12 sm:w-64 max-w-[290px] aspect-[0.75] border-2 py-5 px-4 mx-5 my-10'>
-            <div className='aspect-square w-3/4 max-w-[56] m-auto border-2 border-black rounded-full flex justify-center items-center'>
+        <div className='max-w-7xl m-auto flex justify-center sm:justify-around flex-wrap'>
+          {certs.map(cert => <div key={cert.title.split(" ")[0]} className='bg-new text-white w-11/12 sm:w-64 max-w-[290px] aspect-[0.75] border-2 py-5 px-4 mx-5 my-10 rounded-2xl'>
+            <div className='aspect-square bg-white w-3/4 max-w-[56] m-auto border-2 border-black rounded-full flex justify-center items-center'>
               <div className='w-[70%] aspect-square relative'>
                 <Image alt='certificate' src={cert.logo} fill style={{objectFit: 'contain'}}/>
               </div>
             </div>
 
             <p className='text-center my-2 p-2 font-bold text-xl'>{cert.title}</p>
-            <a className='text-center my-5 p-2 font-bold border-2 border-black block text-xl' target='_blank' href={cert.document}>Download Certificate</a>
+            <a className='text-center my-5 p-2 font-bold bg-new3 rounded-lg block text-xl opacity-90 hover:opacity-100 active:bg-new2' target='_blank' href={cert.document}>Download Certificate</a>
           </div>)}
           
         </div>
@@ -185,6 +187,13 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <footer className='py-5 text-center bg-dark-blue'>
+        <div className='w-20 aspect-square relative m-auto border-4 border-dark-blue rounded-full'>
+          <Image className='rounded-full' alt='crossed swords' src='/images/warrior.jpeg' fill style={{objectFit: 'contain'}}/>
+        </div>
+        <h2 className='my-4 text-2xl font-bold text-white'>Warrior!</h2>
+      </footer>
     </main>
   )
 }
