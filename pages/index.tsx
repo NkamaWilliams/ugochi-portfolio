@@ -75,20 +75,22 @@ export default function Home() {
   return (
     <main className="bg-white">
 
-      <nav className='sticky top-0 z-10 p-2 bg-white sm:relative sm:bg-transparent sm:top-4 w-full max-w-5xl lg:left-1/2 lg:-translate-x-1/2 flex justify-between items-center'>
-          <a className='w-16 mx-4 pt-[0.4rem] box-border block border-4 border-dark-blue rounded-full aspect-square text-center font-semibold text-4xl text-light-blue relative' href="#"><Image className='rounded-full' alt='warrior' src='/images/warrior.jpeg' fill objectFit='contain'/></a>
+      <nav className='sticky top-0 z-10 p-2 bg-white sm:relative sm:bg-transparent sm:top-4 w-full max-w-5xl lg:left-1/2 lg:-translate-x-1/2 flex justify-between sm:justify-center items-center'>
+          <a className='sm:hidden w-16 mx-4 pt-[0.4rem] box-border block rounded-full aspect-square text-center font-semibold text-4xl text-light-blue relative' href="#">
+              {/* <Image className='rounded-full' alt='warrior' src='/images/warrior.jpeg' fill objectFit='contain'/> */}
+            </a>
 
-          <div className='h-max mx-4 flex flex-col sm:block sm:w-1/2 sm:box-border'>
+          <div className='h-max mx-4 flex flex-col sm:block sm:w-3/4 sm:box-border'>
             <div onClick={toggleMenu} className='ml-auto sm:hidden'>
               <Image src='/images/icon-hamburger.svg' alt='menu-toggle' width={34} height={64} className='menu'/>
             </div>
             
             <div onClick={toggleMenu} className='hidden dropdown absolute w-full h-screen sm:h-full p-5 bg-transparent-black top-full left-1/2 -translate-x-1/2 shadow-xl sm:relative sm:flex sm:justify-end sm:max-w-3xl sm:left-0 sm:top-0 sm:-translate-x-0 sm:w-full sm:shadow-none sm:bg-transparent'>
               <div className='bg-white max-w-[375px] w-[90%] m-auto sm:flex sm:bg-transparent'>
-                <a href='#' className='block px-8 py-4 font-semibold text-lg text-dark-blue hover:text-cyan hover:bg-dark-blue sm:inline sm:p-0 sm:mx-2 sm:text-light-blue sm:hover:bg-transparent'>Home</a>
-                <a href='#about' className='block px-8 py-4 font-semibold text-lg text-dark-blue hover:text-cyan hover:bg-dark-blue sm:inline sm:p-0 sm:mx-2 sm:text-light-blue sm:hover:bg-transparent'>About Me</a>
-                <a href='#gallery' className='block px-8 py-4 font-semibold text-lg text-dark-blue hover:text-cyan hover:bg-dark-blue sm:inline sm:p-0 sm:mx-2 sm:text-light-blue sm:hover:bg-transparent'>Gallery</a>
-                <a href='#contact' className='block px-8 py-4 font-semibold text-lg text-dark-blue hover:text-cyan hover:bg-dark-blue sm:inline sm:p-0 sm:mx-2 sm:text-light-blue sm:hover:bg-transparent'>Contact</a>
+                <a href='#' className='block px-8 py-4 font-semibold text-lg text-white hover:text-cyan sm:inline sm:p-0 sm:mx-2  sm:hover:bg-transparent'>Home</a>
+                <a href='#about' className='block px-8 py-4 font-semibold text-lg text-white hover:text-cyan sm:inline sm:p-0 sm:mx-2  sm:hover:bg-transparent'>About Me</a>
+                <a href='#gallery' className='block px-8 py-4 font-semibold text-lg text-white hover:text-cyan sm:inline sm:p-0 sm:mx-2  sm:hover:bg-transparent'>Gallery</a>
+                <a href='#contact' className='block px-8 py-4 font-semibold text-lg text-white hover:text-cyan sm:inline sm:p-0 sm:mx-2  sm:hover:bg-transparent'>Contact</a>
               </div>
             </div>
           </div>
@@ -100,8 +102,8 @@ export default function Home() {
             <div className='hidden md:block w-[500px] absolute z-0 -top-48 left-1/2 -translate-x-1/2 aspect-square'>
               <div className='w-full aspect-square rounded-full border-b-8 border-cyan animate-spin'></div>
             </div>
-            <h2 className='text-4xl text-red-600 font-semibold w-full'>Hi! I am</h2>
-            <h1 className='text-6xl w-full text-light-blue'><b className='text-white'>Nkama</b> Ugochi</h1>
+            <h2 className='text-4xl text-white font-semibold w-full'>Hi! I am</h2>
+            <h1 className='text-6xl w-full text-white'><b className='text-white'>Nkama</b> Ugochi</h1>
           </div>
         </div>
       </header>
@@ -192,7 +194,7 @@ export default function Home() {
         <div className='w-20 aspect-square relative m-auto border-4 border-dark-blue rounded-full'>
           <Image className='rounded-full' alt='crossed swords' src='/images/warrior.jpeg' fill style={{objectFit: 'contain'}}/>
         </div>
-        <h2 className='my-4 text-2xl font-bold text-white'>Warrior!</h2>
+        <a href='https://github.com/NkamaWilliams' target='_blank' rel='noopener'><h2 className='my-4 text-2xl font-bold text-white'>Warrior!</h2></a>
       </footer>
     </main>
   )
