@@ -38,7 +38,7 @@ export default function Home() {
 
   const contactInfo = [['/images/phone.png', 'Phone Number', '+234 818 644 0990'], ['/images/mail.png', 'Email', 'moyinoluwa.nkama@gmail.com'], ['/images/linkedin.png', 'Linkedin', 'https://www.linkedin.com/in/ugochi-nkama-aat-aca']]
 
-  const galleryImages = ["/images/img-1.jpg", "/images/img-3.jpg", "/images/img-2.jpg", "/images/img-4.jpg", "/images/img-5(1).jpg"]
+  const galleryImages = ["/images/img-1.jpg", "/images/img-3.jpg", "/images/img-2.jpg", "/images/img-4.jpg", "/images/img-5s.jpg", "/images/img-6.jpg"]
 
   const toggleMenu = () => {
     const dropdown = document.querySelector(".dropdown")
@@ -55,7 +55,7 @@ export default function Home() {
 
   const changeImage = (amnt:number) => {
     let gallery = document.querySelector(".gallery")
-    setState((state + amnt) >= 0? (state + amnt) % galleryImages.length : 2)
+    setState((state + amnt) >= 0? (state + amnt) % galleryImages.length : galleryImages.length - 1)
     console.log(state)
     // gallery?.setAttribute('src', '/images/'+galleryImages[state])
   }
@@ -87,10 +87,10 @@ export default function Home() {
             
             <div onClick={toggleMenu} className='hidden dropdown absolute w-full h-screen sm:h-full p-5 bg-transparent-black top-full left-1/2 -translate-x-1/2 shadow-xl sm:relative sm:flex sm:justify-end sm:max-w-3xl sm:left-0 sm:top-0 sm:-translate-x-0 sm:w-full sm:shadow-none sm:bg-transparent'>
               <div className='bg-white max-w-[375px] w-[90%] m-auto sm:flex sm:bg-transparent'>
-                <a href='#' className='block px-8 py-4 font-semibold text-lg text-white hover:text-cyan sm:inline sm:p-0 sm:mx-2  sm:hover:bg-transparent'>Home</a>
-                <a href='#about' className='block px-8 py-4 font-semibold text-lg text-white hover:text-cyan sm:inline sm:p-0 sm:mx-2  sm:hover:bg-transparent'>About Me</a>
-                <a href='#gallery' className='block px-8 py-4 font-semibold text-lg text-white hover:text-cyan sm:inline sm:p-0 sm:mx-2  sm:hover:bg-transparent'>Gallery</a>
-                <a href='#contact' className='block px-8 py-4 font-semibold text-lg text-white hover:text-cyan sm:inline sm:p-0 sm:mx-2  sm:hover:bg-transparent'>Contact</a>
+                <a href='#' className='block px-8 py-4 font-semibold text-lg text-dark-blue hover:bg-dark-blue sm:text-white hover:text-cyan sm:inline sm:p-0 sm:mx-2  sm:hover:bg-transparent'>Home</a>
+                <a href='#about' className='block px-8 py-4 font-semibold text-lg text-dark-blue hover:bg-dark-blue sm:text-white hover:text-cyan sm:inline sm:p-0 sm:mx-2  sm:hover:bg-transparent'>About Me</a>
+                <a href='#gallery' className='block px-8 py-4 font-semibold text-lg text-dark-blue hover:bg-dark-blue sm:text-white hover:text-cyan sm:inline sm:p-0 sm:mx-2  sm:hover:bg-transparent'>Gallery</a>
+                <a href='#contact' className='block px-8 py-4 font-semibold text-lg text-dark-blue hover:bg-dark-blue sm:text-white hover:text-cyan sm:inline sm:p-0 sm:mx-2  sm:hover:bg-transparent'>Contact</a>
               </div>
             </div>
           </div>
@@ -118,15 +118,15 @@ export default function Home() {
           </div>
         </div>
 
-        <div className='w-full my-10 aspect-[0.6] relative sm:w-[48%] sm:max-w-lg sm:aspect-square flex justify-center'>
-          <Image src='/images/girl.jpg' alt='ugo' fill style={{objectFit: 'cover', objectPosition: 'top'}}/>
+        <div className='w-[90%] mx-auto my-10 aspect-[0.6] relative sm:w-[48%] sm:max-w-lg sm:aspect-square flex justify-center'>
+          <Image src='/images/ugochi.jpg' alt='ugo' fill style={{objectFit: 'cover', objectPosition: 'top'}}/>
         </div>
       </section>
 
       <section id='gallery' className='my-16 mx-2'>
-        <h2 className='mx-auto my-4 w-max text-4xl font-semibold bg-gradient-rainbow text-transparent bg-clip-text text-center'>Featured Works!</h2>
+        <h2 className='mx-auto my-4 w-max text-4xl font-semibold text-black text-center'>Art Works!</h2>
 
-        <div className=' max-w-6xl flex-grow mx-auto border-[20px] border-image bg-[#FFFDD0] bg-no-repeat bg-cover'>
+        <div className=' max-w-6xl flex-grow mx-auto border-[20px] bg-[#FFFDD0]'>
           <div className=''>
             <div className='flex items-center justify-center relative sm:max-w-4xl sm:m-auto overflow-hidden py-10 min-h-[500px]'>
               <div className='w-96 aspect-square relative'>
@@ -191,10 +191,10 @@ export default function Home() {
       </section>
 
       <footer className='py-5 text-center bg-dark-blue'>
-        <div className='w-20 aspect-square relative m-auto border-4 border-dark-blue rounded-full'>
+        {/* <div className='w-20 aspect-square relative m-auto border-4 border-dark-blue rounded-full'>
           <Image className='rounded-full' alt='crossed swords' src='/images/warrior.jpeg' fill style={{objectFit: 'contain'}}/>
-        </div>
-        <a href='https://github.com/NkamaWilliams' target='_blank' rel='noopener'><h2 className='my-4 text-2xl font-bold text-white'>Warrior!</h2></a>
+        </div> */}
+        <a href='https://github.com/NkamaWilliams' target='_blank' rel='noopener'><h2 className='my-4 text-lg text-white'>COPYRIGHT © 2023</h2></a>
       </footer>
     </main>
   )
