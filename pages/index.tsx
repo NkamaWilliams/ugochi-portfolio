@@ -7,9 +7,38 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   const [state, setState] = useState(0)
 
+  const volunteer = [1, 2, 3, 4, 5, 6].map(num => `/images/volunteer${num}.jpeg`)
+
+  const certs = [{
+    title: 'ATSWA Membership Certificate',
+    logo: '/images/ican-logo.webp',
+    document: '/documents/AAT CERTIFICATE -UGOCHI NKAMA.pdf'
+  },
+  {
+    title: 'ICAN Membership Certificate',
+    logo: '/images/ican-logo.webp',
+    document: '/documents/ICAN CERTIFICATE -UGOCHI NKAMA.pdf'
+  },
+  {
+    title: 'CFI & ALX - FMVA Certificate',
+    logo: '/images/cfi.png',
+    document: '/documents/FMVA Certificate.pdf'
+  },
+  {
+    title: 'McKinsey Forward Program',
+    logo: '/images/mckinsey.svg',
+    document: '/documents/McKinsey_Forward_Program_Badge20221224-30-1omg358.pdf'
+  },
+  {
+    title: 'Tekedia - Business Administration',
+    logo: '/images/tekedia.png',
+    document: '/documents/tekedia-cert.jpeg'
+  },
+]
+
   const contactInfo = [['/images/phone.png', 'Phone Number', '+234 818 644 0990'], ['/images/mail.png', 'Email', 'moyinoluwa.nkama@gmail.com'], ['/images/linkedin.png', 'Linkedin', 'https://www.linkedin.com/in/ugochi-nkama-aat-aca']]
 
-  const galleryImages = ["img-1.jpg", "img-3.jpg", "img-2.jpg", "img-4.jpg", "img-5(1).jpg"]
+  const galleryImages = ["/images/img-1.jpg", "/images/img-3.jpg", "/images/img-2.jpg", "/images/img-4.jpg", "/images/img-5(1).jpg"]
 
   const toggleMenu = () => {
     const dropdown = document.querySelector(".dropdown")
@@ -28,7 +57,7 @@ export default function Home() {
     let gallery = document.querySelector(".gallery")
     setState((state + amnt) >= 0? (state + amnt) % galleryImages.length : 2)
     console.log(state)
-    gallery?.setAttribute('src', '/images/'+galleryImages[state])
+    // gallery?.setAttribute('src', '/images/'+galleryImages[state])
   }
 
   const contact = (info: string[]) =>{
@@ -80,26 +109,25 @@ export default function Home() {
       <section id='about' className='flex flex-col sm:flex-row justify-around mt-10 text-light-blue sm:p-10'>
         <div className='w-full sm:w-[48%] px-5 flex items-center'>
           <div>
-            <h1 className='text-4xl font-semibold text-dark-blue'>About Me</h1>
+            <h2 className='text-4xl font-semibold text-dark-blue'>About Me</h2>
             <p className='text-xl leading-loose mt-8'>I am Nkama Ugochi, an ICAN certified accountant and Audit Associate at BDO. I aspire to become a leading professional in my field in the next 5 years, and I am currently working hard to reach that goal.</p>
 
             <p className='text-xl leading-loose mt-8'>When I am not working, reading, or learning new things, I like to make cards for various occasions, like birthdays, the New Year, or to wish someone well, all as a way to challenge my creativity. You can check out some of my work below:</p>
           </div>
         </div>
 
-        <div className='w-full sm:w-[48%] sm:max-w-lg sm:aspect-square flex justify-center'>
-          {/* <Image src='/@/public/images/girl.jpg' alt='ugo' width={450} height={400}/> */}
-          <img className='object-cover w-full object-top' alt='ugo' src='/images/girl.jpg'/>
+        <div className='w-full my-10 aspect-[0.6] relative sm:w-[48%] sm:max-w-lg sm:aspect-square flex justify-center'>
+          <Image src='/images/girl.jpg' alt='ugo' fill style={{objectFit: 'cover', objectPosition: 'top'}}/>
         </div>
       </section>
 
       <section id='gallery' className='my-16 mx-2'>
-        <h1 className='m-4 text-4xl font-semibold text-black text-center'>Featured Works!</h1>
+        <h2 className='m-4 text-4xl font-semibold text-black text-center'>Featured Works!</h2>
 
         <div className=' max-w-6xl flex-grow mx-auto border-[20px] border-image'>
           <div className='flex items-center justify-center relative sm:max-w-4xl sm:m-auto overflow-hidden py-10 min-h-[500px]'>
-            <div className='w-96 aspect-square object-contain'>
-              <img className='w-full gallery' alt='picture' src='/images/img-1.jpg'/>
+            <div className='w-96 aspect-square relative'>
+              <Image alt='picture' src={galleryImages[state]} fill style={{objectFit:'contain'}} />
             </div>
 
             <p onClick={() => changeImage(-1)} className='aspect-square opacity-70 hover:opacity-100 hover:cursor-pointer w-24 font-bold text-7xl text-dark-blue rounded-full pb-4 flex items-center justify-center absolute -left-6'>&lt;</p>
@@ -109,20 +137,52 @@ export default function Home() {
         </div>
       </section>
 
-      <section id='contact' className='my-10 max-w-6xl mx-auto'>
+      <section id='certificates' className='my-10'>
+        <h1 className='m-4 text-4xl font-semibold text-black text-center'>My Certificates</h1>
+
+        <div className='max-w-7xl m-auto flex justify-center flex-wrap'>
+          {certs.map(cert => <div key={cert.title.split(" ")[0]} className='bg-white w-11/12 sm:w-64 max-w-[290px] aspect-[0.75] border-2 py-5 px-4 mx-5 my-10'>
+            <div className='aspect-square w-3/4 max-w-[56] m-auto border-2 border-black rounded-full flex justify-center items-center'>
+              <div className='w-[70%] aspect-square relative'>
+                <Image alt='certificate' src={cert.logo} fill style={{objectFit: 'contain'}}/>
+              </div>
+            </div>
+
+            <p className='text-center my-2 p-2 font-bold text-xl'>{cert.title}</p>
+            <a className='text-center my-5 p-2 font-bold border-2 border-black block text-xl' target='_blank' href={cert.document}>Download Certificate</a>
+          </div>)}
+          
+        </div>
+      </section>
+
+      <section id='volunteer' className='my-10'>
+        <h1 className='m-4 text-4xl font-semibold text-black text-center'>Volunteer Work</h1>
+
+        <div className='gallery flex justify-center flex-wrap'>
+          {volunteer.map(pic => 
+          <div className='relative w-11/12 sm:w-3/5 lg:w-1/3 max-w-[360px] my-5 mx-4 aspect-[0.6]' key={pic.slice(pic.length - 6)}>
+            <Image alt={pic.split('/')[2]} src={pic} fill style={{objectFit: 'cover'}}/>
+          </div>)}
+        </div>
+      </section>
+
+      <section id='contact' className='my-10'>
         <h2 className='text-4xl text-center font-semibold my-6'>Contact Me</h2>
         
-        <div className='flex flex-wrap h-[400px] items-center justify-around w-full'>
-          {contactInfo.map(info => <div key={info[1]} className='w-80 aspect-[0.75]'>
-            <div className='text-white w-11/12 aspect-[0.75] pt-3 mx-3 my-5 shadow-lg shadow-gray-500 bg-slate-800 hover:bg-slate-700'>
-              <div className='bg-white w-40 h-40 rounded-full my-8 mx-auto flex justify-center items-center'>
-                <Image alt='contact-method' src={info[0]} height={90} width={90}/>
+        <div className=' max-w-6xl mx-auto'>
+          <div className='flex flex-wrap h-[400px] items-center justify-around w-full'>
+            {contactInfo.map(info => <div key={info[1]} className='w-11/12 max-w-[320px] aspect-[0.75]'>
+              <div className='text-white w-11/12 aspect-[0.75] py-3 mx-3 my-5 shadow-lg shadow-gray-500 bg-slate-800 hover:bg-slate-700'>
+                <div className='bg-white w-40 aspect-square rounded-full my-8 mx-auto flex justify-center items-center'>
+                  <div className='relative w-7/12 aspect-square'>
+                    <Image alt='contact-method' src={info[0]} fill style={{objectFit: 'contain'}}/>
+                  </div>
+                </div>
+                <h1 className='font-semibold text-3xl text-center'>{info[1]}</h1>
+                <p className='text-center text-xl m-auto w-10/12'>{contact(info)}</p>
               </div>
-              <h1 className='font-semibold text-3xl text-center'>{info[1]}</h1>
-              <p className='text-center text-xl m-auto w-10/12'>{contact(info)}</p>
-              
-            </div>
-          </div>)}
+            </div>)}
+          </div>
         </div>
       </section>
     </main>
