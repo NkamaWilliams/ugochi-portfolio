@@ -126,16 +126,16 @@ export default function Home() {
       <section id='gallery' className='my-16 mx-2'>
         <h2 className='mx-auto my-4 w-max text-4xl font-semibold text-black text-center'>Art Works!</h2>
 
-        <div className=' max-w-6xl flex-grow mx-auto border-[20px] bg-[#FFFDD0]'>
+        <div className=' max-w-6xl flex-grow mx-auto border-[10px] sm:border-[15px] bg-[lightgray]'>
           <div className=''>
             <div className='flex items-center justify-center relative sm:max-w-4xl sm:m-auto overflow-hidden py-10 min-h-[500px]'>
-              <div className='w-96 aspect-square relative'>
+              <div className='w-[550px] aspect-square relative'>
                 <Image alt='picture' src={galleryImages[state]} fill style={{objectFit:'contain'}} />
               </div>
 
-              <p onClick={() => changeImage(-1)} className='aspect-square opacity-70 hover:opacity-100 hover:cursor-pointer w-24 font-bold text-7xl text-dark-blue rounded-full pb-4 flex items-center justify-center absolute -left-6'>&lt;</p>
+              <p onClick={() => changeImage(-1)} className='aspect-square opacity-50 hover:opacity-100 hover:cursor-pointer w-12 font-bold text-7xl text-white bg-black rounded-lg pb-4 flex items-center justify-center absolute left-1 z-20'>&lt;</p>
 
-              <p onClick={() => changeImage(1)} className='aspect-square opacity-70 hover:opacity-100 hover:cursor-pointer w-24 font-bold text-7xl text-dark-blue rounded-full pb-4 flex items-center justify-center absolute -right-6'>&gt;</p>
+              <p onClick={() => changeImage(1)} className='aspect-square opacity-50 hover:opacity-100 hover:cursor-pointer w-12 font-bold text-7xl text-white bg-black rounded-lg pb-4 flex items-center justify-center absolute right-1 z-20'>&gt;</p>
             </div>
           </div>
         </div>
@@ -170,11 +170,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section id='contact' className='my-10'>
+      <section id='contact' className='my-10 box-border'>
         <h2 className='text-4xl text-center font-semibold my-6'>Contact Me</h2>
         
         <div className=' max-w-6xl mx-auto'>
-          <div className='flex flex-wrap h-[400px] items-center justify-around w-full'>
+          <div className='flex flex-wrap min-h-[400px] items-center justify-around w-full'>
             {contactInfo.map(info => <div key={info[1]} className='w-11/12 max-w-[320px] aspect-[0.75]'>
               <div className='text-white w-11/12 aspect-[0.75] py-3 mx-3 my-5 shadow-lg shadow-gray-500 bg-slate-800 hover:bg-slate-700'>
                 <div className='bg-white w-40 aspect-square rounded-full my-8 mx-auto flex justify-center items-center'>
@@ -190,7 +190,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className='py-5 text-center bg-dark-blue'>
+      <footer className='py-5 hidden sm:block text-center bg-dark-blue'>
         {/* <div className='w-20 aspect-square relative m-auto border-4 border-dark-blue rounded-full'>
           <Image className='rounded-full' alt='crossed swords' src='/images/warrior.jpeg' fill style={{objectFit: 'contain'}}/>
         </div> */}
