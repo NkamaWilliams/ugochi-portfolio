@@ -195,7 +195,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className='py-5 hidden sm:block text-center bg-dark-blue'>
+      <footer className='py-1 hidden sm:block text-center bg-dark-blue'>
         {/* <div className='w-20 aspect-square relative m-auto border-4 border-dark-blue rounded-full'>
           <Image className='rounded-full' alt='crossed swords' src='/images/warrior.jpeg' fill style={{objectFit: 'contain'}}/>
         </div> */}
