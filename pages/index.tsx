@@ -57,7 +57,6 @@ export default function Home() {
     let gallery = document.querySelector(".gallery")
     setState((state + amnt) >= 0? (state + amnt) % galleryImages.length : galleryImages.length - 1)
     console.log(state)
-    // gallery?.setAttribute('src', '/images/'+galleryImages[state])
   }
 
   const contact = (info: string[]) =>{
@@ -75,22 +74,23 @@ export default function Home() {
   return (
     <main className="bg-white">
 
-      <nav className='sticky top-0 z-10 p-2 bg-white sm:relative sm:bg-transparent sm:top-4 w-full max-w-5xl lg:left-1/2 lg:-translate-x-1/2 flex justify-between sm:justify-center items-center'>
+      <nav className='sticky top-0 z-40 m-auto p-2 bg-white w-full max-w-5xl flex justify-between sm:justify-center xl:rounded-[50px] xl:top-2 shadow-lg items-center'>
           <a className='sm:hidden w-16 mx-4 pt-[0.4rem] box-border block rounded-full aspect-square text-center font-semibold text-4xl text-light-blue relative' href="#">
               {/* <Image className='rounded-full' alt='warrior' src='/images/warrior.jpeg' fill objectFit='contain'/> */}
             </a>
 
-          <div className='h-max mx-4 flex flex-col sm:block sm:w-3/4 sm:box-border'>
+          <div className='h-max mx-4 flex flex-col sm:block sm:w-5/6 sm:box-border'>
             <div onClick={toggleMenu} className='ml-auto sm:hidden'>
               <Image src='/images/icon-hamburger.svg' alt='menu-toggle' width={34} height={64} className='menu'/>
             </div>
             
-            <div onClick={toggleMenu} className='hidden dropdown absolute w-full h-screen sm:h-full p-5 bg-transparent-black top-full left-1/2 -translate-x-1/2 shadow-xl sm:relative sm:flex sm:justify-end sm:max-w-3xl sm:left-0 sm:top-0 sm:-translate-x-0 sm:w-full sm:shadow-none sm:bg-transparent'>
-              <div className='bg-white max-w-[375px] w-[90%] m-auto sm:flex sm:bg-transparent'>
-                <a href='#' className='block px-8 py-4 font-semibold text-lg text-dark-blue hover:bg-dark-blue sm:text-white hover:text-cyan sm:inline sm:p-0 sm:mx-2  sm:hover:bg-transparent'>Home</a>
-                <a href='#about' className='block px-8 py-4 font-semibold text-lg text-dark-blue hover:bg-dark-blue sm:text-white hover:text-cyan sm:inline sm:p-0 sm:mx-2  sm:hover:bg-transparent'>About Me</a>
-                <a href='#gallery' className='block px-8 py-4 font-semibold text-lg text-dark-blue hover:bg-dark-blue sm:text-white hover:text-cyan sm:inline sm:p-0 sm:mx-2  sm:hover:bg-transparent'>Gallery</a>
-                <a href='#contact' className='block px-8 py-4 font-semibold text-lg text-dark-blue hover:bg-dark-blue sm:text-white hover:text-cyan sm:inline sm:p-0 sm:mx-2  sm:hover:bg-transparent'>Contact</a>
+            <div onClick={toggleMenu} className='hidden dropdown absolute w-full h-screen sm:h-full p-2 bg-transparent-black top-full left-1/2 -translate-x-1/2 shadow-xl sm:relative sm:flex sm:justify-end sm:max-w-3xl sm:left-0 sm:top-0 sm:-translate-x-0 sm:w-full sm:shadow-none sm:bg-transparent'>
+              <div className='bg-white max-w-[500px] w-[90%] m-auto sm:flex sm:justify-evenly sm:bg-transparent'>
+                <a href='#' className='block px-8 py-4 font-semibold text-lg text-dark-blue hover:bg-dark-blue hover:text-cyan sm:inline sm:p-0 sm:mx-2  sm:hover:bg-transparent'>Home</a>
+                <a href='#about' className='block px-8 py-4 font-semibold text-lg text-dark-blue hover:bg-dark-blue hover:text-cyan sm:inline sm:p-0 sm:mx-2  sm:hover:bg-transparent'>About Me</a>
+                <a href='#gallery' className='block px-8 py-4 font-semibold text-lg text-dark-blue hover:bg-dark-blue hover:text-cyan sm:inline sm:p-0 sm:mx-2  sm:hover:bg-transparent'>Art works</a>
+                <a href='#certificates' className='block px-8 py-4 font-semibold text-lg text-dark-blue hover:bg-dark-blue hover:text-cyan sm:inline sm:p-0 sm:mx-2  sm:hover:bg-transparent'>Certificates</a>
+                <a href='#contact' className='block px-8 py-4 font-semibold text-lg text-dark-blue hover:bg-dark-blue hover:text-cyan sm:inline sm:p-0 sm:mx-2  sm:hover:bg-transparent'>Contact</a>
               </div>
             </div>
           </div>
@@ -108,13 +108,18 @@ export default function Home() {
         </div>
       </header>
 
-      <section id='about' className='flex flex-col sm:flex-row justify-around mt-10 text-light-blue sm:p-10'>
+      <section id='about' className='flex flex-col sm:flex-row justify-around mt-10 text-dark-blue sm:p-10'>
         <div className='w-full sm:w-[48%] px-5 flex items-center'>
           <div>
             <h2 className='text-4xl font-semibold text-dark-blue'>About Me</h2>
-            <p className='text-xl leading-loose mt-8'>I am Nkama Ugochi, an ICAN certified accountant and Audit Associate at BDO. I aspire to become a leading professional in my field in the next 5 years, and I am currently working hard to reach that goal.</p>
+            <p className='text-xl leading-loose mt-8'>I&apos;m Ugochi Victoria Nkama, a Chartered Accountant currently putting my analytical skills to work as an audit associate at BDO Nigeria. While numbers and balance sheets keep me engaged during the day, my heart finds its true rhythm in the world of artistry.
+            </p>
 
-            <p className='text-xl leading-loose mt-8'>When I am not working, reading, or learning new things, I like to make cards for various occasions, like birthdays, the New Year, or to wish someone well, all as a way to challenge my creativity. You can check out some of my work below:</p>
+            <p className='text-xl leading-loose mt-8'>I started my artistic journey with drawing, but over time, my creative journey took a new turn. I am now into crafting handmade cards and it has been a delight, so far, to see my hands bring to life the emotions and stories of my customers through each carefully designed piece. I hope to one day delve into pottery and sculpting so I can beautiful art pieces with my hands.</p>
+
+            <p className='text-xl leading-loose mt-8'>Beyond my professional and creative pursuits, I&apos;m an advocate for positive change. I&apos;m humbled to be a part of the Lagos Food Bank Initiative, where I actively contribute to alleviating hunger in Lagos, Nigeria</p>
+
+            <p className='text-xl leading-loose mt-8'>Life&apos;s journey is a canvas, and I&apos;m determined to paint it with a palette of purpose, creativity, and compassion.</p>
           </div>
         </div>
 
