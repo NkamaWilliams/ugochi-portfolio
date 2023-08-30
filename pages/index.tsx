@@ -38,7 +38,7 @@ export default function Home() {
 
   const contactInfo = [['/images/phone.png', 'Phone Number', '+234 818 644 0990'], ['/images/mail.png', 'Email', 'moyinoluwa.nkama@gmail.com'], ['/images/linkedin.png', 'Linkedin', 'https://www.linkedin.com/in/ugochi-nkama-aat-aca']]
 
-  const galleryImages = ["/images/img-1.jpg", "/images/img-3.jpg", "/images/img-2.jpg", "/images/img-4.jpg", "/images/img-5s.jpg", "/images/img-6.jpg"]
+  const galleryImages = ["/images/img-6.jpeg", "/images/img-5.jpeg", "/images/img-4.jpeg", "/images/img-3.jpeg", "/images/img-2.jpeg", "/images/img-1.jpeg", "/images/img-1.jpg", "/images/img-3.jpg", "/images/img-2.jpg", "/images/img-4.jpg", "/images/img-5s.jpg", "/images/img-6.jpg"]
 
   const toggleMenu = () => {
     const dropdown = document.querySelector(".dropdown")
